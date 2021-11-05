@@ -11,12 +11,12 @@ const home: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) =
         {
           link: 'id/[id]',
           desc: 'get group data by id',
-          query: 'number'
+          query: 'number',
         },
         {
           link: 'module/[module]',
           desc: 'get group data by module',
-          query: 'string'
+          query: 'string',
         },
       ],
     },
