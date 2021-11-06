@@ -6,7 +6,7 @@ const home: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) =
   res.json({
     groups: {
       link: '/groups',
-      desc: 'get all group datas',
+      desc: 'get all group data',
       child: [
         {
           link: 'id/[id]',
