@@ -16,7 +16,7 @@ const groups: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse)
 
   if (error) throw new Error(`${error.message} (hint: ${error.hint})`);
 
-  res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
+  // res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
 
   res.status(200);
   res.json({ options: { limit, cursor, search }, results: Groups });
