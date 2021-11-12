@@ -16,6 +16,7 @@ const groups: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse)
 
   if (error) throw new Error(`${error.message} (hint: ${error.hint})`);
 
+  // No need to save things as it might get requested every second
   // res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
 
   res.status(200);

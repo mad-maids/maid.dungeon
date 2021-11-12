@@ -10,7 +10,8 @@ const newGroup: NextApiHandler = async (req: NextApiRequest, res: NextApiRespons
 
     if (error) throw new Error(`${error.message} (hint: ${error.hint})`);
 
-    res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
+    // No need to save things as it might get requested every second
+    // res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
 
     res.status(200);
     res.json({ msg: 'OK!', groups: Group });
