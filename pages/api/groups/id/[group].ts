@@ -19,7 +19,6 @@ const groupsByID: NextApiHandler = async (req: NextApiRequest, res: NextApiRespo
     res.status(404);
     res.end(`Not Found`);
   } else {
-
     // No need to save things as it might get requested every second
     // res.setHeader('Cache-Control', ['public', 'maxage=21600', 's-maxage=21600', 'stale-while-revalidate=21600']);
 
