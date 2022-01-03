@@ -12,7 +12,7 @@ const newGroup: NextApiHandler = async (req: NextApiRequest, res: NextApiRespons
 
 
   if (id && module && link) {
-    let { data: Group, error } = await supabase.from('Groups').insert([{ id, module, serialize }]);
+    let { data: Group, error } = await supabase.from('Groups').insert([{ id, module, link: serialize }]);
 
     if (error) throw new Error(`${error.message} (hint: ${error.hint})`);
 
