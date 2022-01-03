@@ -13,7 +13,7 @@
     "lint": "next lint",
     "test": "echo no tests implemented",
     "fmt": "prettier --check .",
-    "fmt:fix": "prettier --write ."
+    "fmt:fix": "prettier --check --write ."
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.25.2",
@@ -34,8 +34,5 @@
   "prettier": {
     "singleQuote": true,
     "printWidth": 120
-  },
-  "engines": {
-    "node": "14"
   }
 }

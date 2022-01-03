@@ -5,8 +5,14 @@ const newGroup: NextApiHandler = async (req: NextApiRequest, res: NextApiRespons
   const { query } = req;
   const { id, module, link } = query;
 
+  // replace all spaces with plus signs
+  const serialize = typeof link === 'string'
+    ? link.replace(/\s/g, '+')
+    : link.join('').replace(/\s/g, '+');
+
+
   if (id && module && link) {
-    let { data: Group, error } = await supabase.from('Groups').insert([{ id, module, link }]);
+    let { data: Group, error } = await supabase.from('Groups').insert([{ id, module, serialize }]);
 
     if (error) throw new Error(`${error.message} (hint: ${error.hint})`);
 
